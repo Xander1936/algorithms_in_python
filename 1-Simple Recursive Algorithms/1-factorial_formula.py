@@ -1,4 +1,4 @@
-# SImple Recursive Algorithms: Factorial Formula for n = 5
+# Simple Recursive Algorithms: Factorial Formula for n = 5
 
 # Solution(1) with a function
 def iterative_factorial(n):
