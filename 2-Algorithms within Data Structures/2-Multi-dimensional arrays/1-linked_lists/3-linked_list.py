@@ -20,7 +20,7 @@ class LinkedList:
         temp = self.head
         while temp is not None:
             if temp.data == x:
-                return True
+                return True # or return x
             temp = temp.next
         else: 
             return False
