@@ -33,8 +33,14 @@ class LinkedList:
             prev = temp
             temp = temp.next
         prev.next = temp.next
+        
+    def delete_tail(self):
+        temp = self.head
+        while temp.next.next is not None:
+            temp = temp.next
+        temp.next = None
 
-# Family list
+# Family list nodes
 family = LinkedList()
 family.head = Node("Bob")
 wife = Node("Amy")
@@ -53,4 +59,5 @@ family.insert_new_header("Dave")
 
 #print(family.search("Bob"))
 family.delete_node("Bob")
+family.delete_tail()
 family.traversal()
