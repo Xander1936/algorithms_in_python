@@ -15,6 +15,15 @@ class LinkedList:
         new_node = Node(new_data)
         new_node.next = self.head
         self.head = new_node
+        
+    def search(self, x):
+        temp = self.head
+        while temp is not None:
+            if temp.data == x:
+                return True
+            temp = temp.next
+        else: 
+            return False
 
 # Family list
 family = LinkedList()
@@ -31,3 +40,4 @@ first_kid.next = second_kid
 #family.traversal()
 family.insert_new_header("Dave")
 family.traversal()
+print(family.search("Bob"))
