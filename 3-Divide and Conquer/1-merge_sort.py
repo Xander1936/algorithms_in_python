@@ -11,7 +11,7 @@ while A:
     D.append(minimum)
     A.remove(minimum)
 print(D) 
-# print(A)
+print(A)
 
 # (2) With an array split into two half: Recursive Merge Sort
 def merging(left, right):
@@ -34,3 +34,22 @@ def merging(left, right):
 left = [2, 5, 6, 10]
 right = [3, 4, 12, 20]
 print(merging(left, right))
+
+# Top down method
+def sortArray(A):
+    if len(A) <= 1:
+        return A
+    middle = len(A) // 2
+    left = sortArray(A[:middle])
+    right = sortArray(A[middle:])
+    merged = []
+    while left and right:
+        if left[0] <= right[0]:
+            merged.append(left.pop(0))
+        else:
+            merged.append(right.pop(0))
+    merged.extend(right if right else left)
+    return merged
+
+A = [2, 5, 31, 6, 10, 3, 4, 12, 20, 22]
+print(sortArray(A))    
